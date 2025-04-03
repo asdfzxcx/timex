@@ -41,7 +41,7 @@ defimpl Timex.Protocol, for: DateTime do
   end
 
   def to_naive_datetime(%DateTime{} = d) do
-    # NOTE: For legacy reasons we shift DateTimes to UTC when making them naive, 
+    # NOTE: For legacy reasons we shift DateTimes to UTC when making them naive,
     # but the standard library just drops the timezone info
     d
     |> Timex.DateTime.shift_zone!("Etc/UTC", Timex.Timezone.Database)
